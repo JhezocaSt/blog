@@ -1,0 +1,221 @@
+/* --- Configurações Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif; /* Fonte antiga/mágica */
+    background-color: #2e1e12; /* Fundo marrom (madeira escura) */
+    color: #e4d8c7; /* Texto claro (cor de pergaminho) */
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho (Header) --- */
+.vlog-header {
+    background-color: #1a110a;
+    border-bottom: 3px solid #ffd700; /* Linha dourada */
+    padding: 4rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    color: #ffd700; /* Dourado */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+/* --- Contêiner Principal --- */
+.vlog-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* --- Títulos e Parágrafos --- */
+h2, h3, h4 {
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h2 { font-size: 2.8rem; border-bottom: 2px solid #5d4037; display: inline-block; padding-bottom: 5px; }
+h3 { font-size: 2.2rem; margin-top: 2rem; }
+h4 { font-size: 2rem; color: #ffd700; text-align: center; margin-top: 3rem; }
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+/* --- Imagens das Teorias (Grandes) --- */
+.theory-main-image {
+    margin: 2rem 0;
+    border: 4px solid #5d4037;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.theory-main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Cartões dos Personagens (Section) --- */
+.characters-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.character-card {
+    background-color: rgba(26, 17, 10, 0.9);
+    border: 2px solid #5d4037;
+    border-radius: 12px;
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+}
+
+/* Layout alternado */
+.character-card.alternative {
+    flex-direction: row-reverse;
+}
+
+.char-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.char-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.char-desc {
+    flex: 2;
+    padding: 2.5rem;
+}
+
+.char-desc h3 {
+    margin-top: 0;
+    color: #ffd700;
+}
+
+/* --- Conclusão --- */
+.vlog-conclusion {
+    text-align: center;
+    max-width: 800px;
+    margin: 4rem auto;
+    background-color: rgba(0,0,0,0.2);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* --- Rodapé (Footer) --- */
+.vlog-footer {
+    background-color: #1a110a;
+    border-top: 2px solid #ffd700;
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.interaction-area h3 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* --- O BOTÃO DE CURTIDA MÁGICO --- */
+.magical-like-button {
+    background: linear-gradient(45deg, #a52a2a, #ffd700); /* Cores da Gryffindor */
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(165, 42, 42, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+/* Ícone de varinha */
+.wand-icon::before {
+    content: "🪄"; 
+    font-size: 1.6rem;
+}
+
+.like-count {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Hover */
+.magical-like-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.7);
+}
+
+/* Quando Clicado (Ativado) */
+.magical-like-button.liked {
+    background: linear-gradient(45deg, #1b5e20, #00C853); /* Cores da Slytherin */
+    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5);
+}
+
+.magical-like-button.liked .wand-icon::before {
+    content: "⚡️"; /* Muda para raio */
+    animation: magicPulse 0.5s ease-out;
+}
+
+@keyframes magicPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4) rotate(10deg); }
+    100% { transform: scale(1); }
+}
+
+.copyright {
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    .header-content h1 { font-size: 2.5rem; }
+    .character-card, .character-card.alternative { flex-direction: column; }
+    .char-image { min-width: 100%; height: 250px; }
+    .char-desc { padding: 1.5rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.8rem; }
+}
