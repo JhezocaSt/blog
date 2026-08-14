@@ -6,120 +6,139 @@
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif; /* Fonte antiga/mágica */
-    background-color: #2e1e12; /* Fundo marrom (madeira escura) */
-    color: #e4d8c7; /* Texto claro (cor de pergaminho) */
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #2e1e12;
+    color: #e4d8c7;
     line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* --- Cabeçalho (Header) --- */
+/* Modo Lumos (Iluminado) ativado via JS */
+body.lumos-mode {
+    background-color: #f4ece1;
+    color: #2b1a0e;
+}
+
+body.lumos-mode .vlog-header,
+body.lumos-mode .vlog-footer {
+    background: #3e2716;
+}
+
+body.lumos-mode .character-card,
+body.lumos-mode .dumbledore-revelation {
+    background-color: #ffffff;
+    border-color: #d4a373;
+    color: #2b1a0e;
+}
+
+body.lumos-mode h2, 
+body.lumos-mode h3 {
+    color: #8b5a2b;
+}
+
+/* --- Botão Lumos / Nox --- */
+.lumos-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #1a110a;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+.lumos-btn:hover {
+    transform: scale(1.08);
+}
+
+/* --- Cabeçalho --- */
 .vlog-header {
-    background-color: #1a110a;
-    border-bottom: 3px solid #ffd700; /* Linha dourada */
-    padding: 4rem 1rem;
+    background: linear-gradient(180deg, #100a06 0%, #1a110a 100%);
+    border-bottom: 3px solid #ffd700;
+    padding: 4rem 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 .header-content h1 {
-    font-size: 3.5rem;
-    color: #ffd700; /* Dourado */
+    font-size: 3.8rem;
+    color: #ffd700;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    padding: 10px 20px;
+    display: inline-block;
+    border-top: 2px solid rgba(255, 215, 0, 0.4);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.4);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.9);
 }
 
 .intro-text {
     max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.4rem;
+    margin: 1rem auto 0;
+    font-size: 1.35rem;
     opacity: 0.9;
 }
 
 /* --- Contêiner Principal --- */
 .vlog-container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 3rem auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
-/* --- Títulos e Parágrafos --- */
 h2, h3, h4 {
     color: #f5f5f5;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-h2 { font-size: 2.8rem; border-bottom: 2px solid #5d4037; display: inline-block; padding-bottom: 5px; }
-h3 { font-size: 2.2rem; margin-top: 2rem; }
-h4 { font-size: 2rem; color: #ffd700; text-align: center; margin-top: 3rem; }
+h2 { 
+    font-size: 2.5rem; 
+    border-bottom: 2px solid #5d4037; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    color: #ffd700;
+}
+
+h3 { font-size: 2rem; margin-top: 1.5rem; }
+h4 { font-size: 2rem; color: #ffd700; text-align: center; margin-top: 2rem; }
 
 p {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
     opacity: 0.95;
 }
 
-/* --- Imagens das Teorias (Grandes) --- */
-.theory-main-image {
-    margin: 2rem 0;
-    border: 4px solid #5d4037;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.theory-main-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* --- Cartões dos Personagens (Section) --- */
+/* --- Cartões dos Personagens --- */
 .characters-analysis {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin: 4rem 0;
+    gap: 1.5rem;
+    margin: 3rem 0;
 }
 
 .character-card {
     background-color: rgba(26, 17, 10, 0.9);
     border: 2px solid #5d4037;
-    border-radius: 12px;
-    display: flex;
-    overflow: hidden;
+    border-left: 6px solid #ffd700;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
     transition: transform 0.3s ease, border-color 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .character-card:hover {
-    transform: translateY(-5px);
+    transform: translateX(8px);
     border-color: #ffd700;
-}
-
-/* Layout alternado */
-.character-card.alternative {
-    flex-direction: row-reverse;
-}
-
-.char-image {
-    flex: 1;
-    min-width: 300px;
-}
-
-.char-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.char-desc {
-    flex: 2;
-    padding: 2.5rem;
 }
 
 .char-desc h3 {
@@ -127,17 +146,29 @@ p {
     color: #ffd700;
 }
 
-/* --- Conclusão --- */
+.char-desc p {
+    margin-bottom: 0;
+}
+
+.dumbledore-revelation {
+    background-color: rgba(26, 17, 10, 0.9);
+    border: 2px solid #5d4037;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
 .vlog-conclusion {
     text-align: center;
     max-width: 800px;
     margin: 4rem auto;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.25);
     padding: 2rem;
     border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
-/* --- Rodapé (Footer) --- */
+/* --- Rodapé --- */
 .vlog-footer {
     background-color: #1a110a;
     border-top: 2px solid #ffd700;
@@ -151,9 +182,9 @@ p {
     margin-bottom: 2rem;
 }
 
-/* --- O BOTÃO DE CURTIDA MÁGICO --- */
+/* --- BOTÃO DE CURTIDA MÁGICO --- */
 .magical-like-button {
-    background: linear-gradient(45deg, #a52a2a, #ffd700); /* Cores da Gryffindor */
+    background: linear-gradient(45deg, #a52a2a, #ffd700);
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -167,10 +198,10 @@ p {
     justify-content: center;
     gap: 12px;
     margin: 0 auto;
+    position: relative;
     transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
-/* Ícone de varinha */
 .wand-icon::before {
     content: "🪄"; 
     font-size: 1.6rem;
@@ -181,20 +212,18 @@ p {
     opacity: 0.9;
 }
 
-/* Hover */
 .magical-like-button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 25px rgba(255, 215, 0, 0.7);
 }
 
-/* Quando Clicado (Ativado) */
 .magical-like-button.liked {
-    background: linear-gradient(45deg, #1b5e20, #00C853); /* Cores da Slytherin */
+    background: linear-gradient(45deg, #1b5e20, #00C853);
     box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5);
 }
 
 .magical-like-button.liked .wand-icon::before {
-    content: "⚡️"; /* Muda para raio */
+    content: "⚡️";
     animation: magicPulse 0.5s ease-out;
 }
 
@@ -204,18 +233,55 @@ p {
     100% { transform: scale(1); }
 }
 
+/* --- EFEITOS MÁGICOS DE PARTICULAS E BRILHOS (JS) --- */
+.magic-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px #ffd700, 0 0 20px #ff9800;
+    animation: particleExplode 0.8s forwards ease-out;
+    z-index: 9999;
+}
+
+@keyframes particleExplode {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0);
+    }
+}
+
+.wand-spark {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #fff, #ffd700, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: sparkFade 0.6s forwards ease-out;
+    z-index: 9999;
+}
+
+@keyframes sparkFade {
+    0% { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
 .copyright {
     margin-top: 3rem;
     font-size: 0.95rem;
     opacity: 0.7;
 }
 
-/* --- Responsividade (Mobile) --- */
 @media (max-width: 768px) {
-    .header-content h1 { font-size: 2.5rem; }
-    .character-card, .character-card.alternative { flex-direction: column; }
-    .char-image { min-width: 100%; height: 250px; }
-    .char-desc { padding: 1.5rem; }
-    h2 { font-size: 2.2rem; }
-    h3 { font-size: 1.8rem; }
+    .header-content h1 { font-size: 2.2rem; letter-spacing: 1px; }
+    .character-card { padding: 1.2rem; }
 }
