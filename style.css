@@ -1,287 +1,249 @@
-/* --- Configurações Globais --- */
+:root {
+  --bg-color: #060a07;
+  --panel-bg: #0d1610;
+  --accent-green: #10723a;
+  --bright-green: #00ff88;
+  --silver: #c0c0c0;
+  --text-main: #d1d5db;
+  --text-muted: #8b9bb4;
+  --border-color: #1a2e20;
+  --button-liked: #7a1515;
+}
+
+body.light-mode {
+  --bg-color: #eef2ef;
+  --panel-bg: #ffffff;
+  --accent-green: #1b4d2e;
+  --bright-green: #10723a;
+  --silver: #4a5568;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #cbd5e1;
+  --button-liked: #991b1b;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Cormorant Garamond', serif;
-    background-color: #2e1e12;
-    color: #e4d8c7;
-    line-height: 1.6;
-    transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Modo Lumos (Iluminado) ativado via JS */
-body.lumos-mode {
-    background-color: #f4ece1;
-    color: #2b1a0e;
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
 }
 
-body.lumos-mode .vlog-header,
-body.lumos-mode .vlog-footer {
-    background: #3e2716;
+.blog-header {
+  background-color: var(--panel-bg);
+  border-bottom: 2px solid var(--accent-green);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-body.lumos-mode .character-card,
-body.lumos-mode .dumbledore-revelation {
-    background-color: #ffffff;
-    border-color: #d4a373;
-    color: #2b1a0e;
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-body.lumos-mode h2, 
-body.lumos-mode h3 {
-    color: #8b5a2b;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* --- Botão Lumos / Nox --- */
-.lumos-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: #1a110a;
-    color: #ffd700;
-    border: 2px solid #ffd700;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 700;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.2s;
+.house-crest {
+  font-size: 2.5rem;
 }
 
-.lumos-btn:hover {
-    transform: scale(1.08);
+.brand h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--bright-green);
 }
 
-/* --- Cabeçalho --- */
-.vlog-header {
-    background: linear-gradient(180deg, #100a06 0%, #1a110a 100%);
-    border-bottom: 3px solid #ffd700;
-    padding: 4rem 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+.tagline {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--silver);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.header-content h1 {
-    font-size: 3.8rem;
-    color: #ffd700;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 1.5rem;
-    padding: 10px 20px;
-    display: inline-block;
-    border-top: 2px solid rgba(255, 215, 0, 0.4);
-    border-bottom: 2px solid rgba(255, 215, 0, 0.4);
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 3px 3px 6px rgba(0, 0, 0, 0.9);
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.intro-text {
-    max-width: 800px;
-    margin: 1rem auto 0;
-    font-size: 1.35rem;
-    opacity: 0.9;
+.blog-like-btn, .theme-btn {
+  background: transparent;
+  border: 1px solid var(--accent-green);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s;
 }
 
-/* --- Contêiner Principal --- */
-.vlog-container {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
+.blog-like-btn:hover, .theme-btn:hover {
+  background-color: var(--accent-green);
+  color: #fff;
+  box-shadow: 0 0 10px var(--bright-green);
 }
 
-h2, h3, h4 {
-    color: #f5f5f5;
-    margin-bottom: 1rem;
-    font-weight: 600;
+.blog-like-btn.liked {
+  background-color: var(--button-liked);
+  border-color: var(--button-liked);
+  color: #fff;
 }
 
-h2 { 
-    font-size: 2.5rem; 
-    border-bottom: 2px solid #5d4037; 
-    display: inline-block; 
-    padding-bottom: 5px; 
-    color: #ffd700;
+.like-counter {
+  font-weight: 700;
+  color: var(--bright-green);
+  font-size: 1.1rem;
 }
 
-h3 { font-size: 2rem; margin-top: 1.5rem; }
-h4 { font-size: 2rem; color: #ffd700; text-align: center; margin-top: 2rem; }
-
-p {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.95;
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 30px;
 }
 
-/* --- Cartões dos Personagens --- */
-.characters-analysis {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 3rem 0;
+.posts-container {
+  flex: 3;
 }
 
-.character-card {
-    background-color: rgba(26, 17, 10, 0.9);
-    border: 2px solid #5d4037;
-    border-left: 6px solid #ffd700;
-    border-radius: 8px;
-    padding: 1.5rem 2rem;
-    transition: transform 0.3s ease, border-color 0.3s;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+.post-card {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
 }
 
-.character-card:hover {
-    transform: translateX(8px);
-    border-color: #ffd700;
+.post-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-green);
 }
 
-.char-desc h3 {
-    margin-top: 0;
-    color: #ffd700;
+.post-image img {
+  width: 220px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.char-desc p {
-    margin-bottom: 0;
+.post-content {
+  padding: 25px;
+  flex: 1;
 }
 
-.dumbledore-revelation {
-    background-color: rgba(26, 17, 10, 0.9);
-    border: 2px solid #5d4037;
-    border-radius: 8px;
-    padding: 2rem;
-    margin-top: 2rem;
+.post-badge {
+  background-color: var(--accent-green);
+  color: #fff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
-.vlog-conclusion {
-    text-align: center;
-    max-width: 800px;
-    margin: 4rem auto;
-    background-color: rgba(0,0,0,0.25);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
+.post-content h2 {
+  margin: 10px 0 5px 0;
+  color: var(--bright-green);
 }
 
-/* --- Rodapé --- */
-.vlog-footer {
-    background-color: #1a110a;
-    border-top: 2px solid #ffd700;
-    padding: 4rem 1rem;
-    text-align: center;
-    margin-top: 4rem;
+.post-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
 }
 
-.interaction-area h3 {
-    margin-top: 0;
-    margin-bottom: 2rem;
+.post-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* --- BOTÃO DE CURTIDA MÁGICO --- */
-.magical-like-button {
-    background: linear-gradient(45deg, #a52a2a, #ffd700);
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(165, 42, 42, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 0 auto;
-    position: relative;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+.read-more {
+  color: var(--silver);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: color 0.2s;
 }
 
-.wand-icon::before {
-    content: "🪄"; 
-    font-size: 1.6rem;
+.read-more:hover {
+  color: var(--bright-green);
+  text-decoration: underline;
 }
 
-.like-count {
-    font-weight: 400;
-    opacity: 0.9;
+.sidebar {
+  flex: 1;
 }
 
-.magical-like-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.7);
+.sidebar-widget {
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
 }
 
-.magical-like-button.liked {
-    background: linear-gradient(45deg, #1b5e20, #00C853);
-    box-shadow: 0 6px 20px rgba(0, 200, 83, 0.5);
+.sidebar-widget h3 {
+  color: var(--bright-green);
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
 }
 
-.magical-like-button.liked .wand-icon::before {
-    content: "⚡️";
-    animation: magicPulse 0.5s ease-out;
+.house-details p {
+  font-size: 0.85rem;
+  margin: 8px 0;
 }
 
-@keyframes magicPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.4) rotate(10deg); }
-    100% { transform: scale(1); }
-}
-
-/* --- EFEITOS MÁGICOS DE PARTICULAS E BRILHOS (JS) --- */
-.magic-particle {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background-color: #ffd700;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 10px #ffd700, 0 0 20px #ff9800;
-    animation: particleExplode 0.8s forwards ease-out;
-    z-index: 9999;
-}
-
-@keyframes particleExplode {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0);
-    }
-}
-
-.wand-spark {
-    position: fixed;
-    width: 15px;
-    height: 15px;
-    background: radial-gradient(circle, #fff, #ffd700, transparent);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    animation: sparkFade 0.6s forwards ease-out;
-    z-index: 9999;
-}
-
-@keyframes sparkFade {
-    0% { transform: translate(-50%, -50%) scale(0.2); opacity: 1; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-}
-
-.copyright {
-    margin-top: 3rem;
-    font-size: 0.95rem;
-    opacity: 0.7;
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
-    .header-content h1 { font-size: 2.2rem; letter-spacing: 1px; }
-    .character-card { padding: 1.2rem; }
+  .container {
+    flex-direction: column;
+  }
+  .post-card {
+    flex-direction: column;
+  }
+  .post-image img {
+    width: 100%;
+    height: 250px;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
 }

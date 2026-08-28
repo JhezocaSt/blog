@@ -1,83 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter, a melhor teoria!</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Slytherin Boys | Blog Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <button id="themeToggle" class="lumos-btn">
-        <span>🪄</span> Lumos
-    </button>
-
-    <header class="vlog-header">
-        <div class="header-content">
-            <h1>Harry Potter, a melhor teoria!</h1>
-            <p class="intro-text">Você já percebeu que as histórias infantis do mundo bruxo dizem muito mais sobre o futuro de Harry Potter do que a gente imagina? Hoje, eu vou te mostrar a teoria mais genial da saga: a teoria de que o Conto dos Três Irmãos esconde a verdadeira identidade de quatro personagens principais, e um deles é a própria Morte.</p>
+  <header class="blog-header">
+    <div class="header-container">
+      <div class="brand">
+        <span class="house-crest">🐍</span>
+        <div>
+          <h1>The Slytherin Boys</h1>
+          <p class="tagline">Grandeza, Astúcia e Orgulho</p>
         </div>
-    </header>
+      </div>
+      
+      <div class="header-actions">
+        <button id="like-blog-btn" class="blog-like-btn">
+          <span class="icon">🐍</span> <span class="btn-text">Apoiar o Blog</span>
+        </button>
+        <span id="blog-like-count" class="like-counter">0</span>
+        <button id="theme-toggle" class="theme-btn" title="Ajustar Luminosidade">👁️ Modo Luz</button>
+      </div>
+    </div>
+  </header>
 
-    <main class="vlog-container">
+  <div class="container">
+    <main class="posts-container">
+      
+      <article class="post-card">
+        <div class="post-image">
+          <img src="https://via.placeholder.com/300x400/0b1a10/00ff88?text=Draco+Malfoy" alt="Draco Malfoy">
+        </div>
+        <div class="post-content">
+          <span class="post-badge">Bruxo de Sangue-Puro</span>
+          <h2>Draco Malfoy</h2>
+          <p class="post-meta">Publicado por Comunidade Sonserina | Categoria: Canon</p>
+          <p class="post-excerpt">
+            Herdeiro da influente família Malfoy, Draco foi educado sob os ideais mais rígidos de pureza de sangue e elitismo do mundo bruxo. Apanhador do time de Quadribol da Sonserina e monitor de Hogwarts, sua trajetória é marcada por conflitos internos devastadores quando se vê obrigado a servir a Lord Voldemort na Segunda Guerra Bruxa.
+          </p>
+          <a href="https://www.wizardingworld.com/fact-file/characters/draco-malfoy" target="_blank" rel="noopener" class="read-more">Ler arquivo completo no Wizarding World &rarr;</a>
+        </div>
+      </article>
 
-        <article class="vlog-entry main-theory">
-            <h2>A Teoria dos Três Irmãos:</h2>
-            <p>Para quem não lembra, o conto fala sobre três irmãos que ganham presentes da Morte: a Varinha das Varinhas, a Pedra da Ressurreição e a Capa da Invisibilidade. A teoria diz que esses irmãos são, na verdade, Voldemort, Snape e Harry. Olha só a lógica:</p>
-        </article>
+      <article class="post-card">
+        <div class="post-image">
+          <img src="https://via.placeholder.com/300x400/0b1a10/00ff88?text=Theodore+Nott" alt="Theodore Nott">
+        </div>
+        <div class="post-content">
+          <span class="post-badge">Intelectual Solitário</span>
+          <h2>Theodore Nott</h2>
+          <p class="post-meta">Publicado por Comunidade Sonserina | Categoria: Canon</p>
+          <p class="post-excerpt">
+            Filho de um Comensal da Morte de primeira geração, Theodore destaca-se por ser um dos alunos mais perspicazes e analíticos de seu ano. Reservado, quieto e avesso ao exibicionismo, ele preferia a companhia de tomos antigos na biblioteca de Hogwarts. Na comunidade de fãs, é amplamente aclamado por seu humor ácido e inteligência calculista.
+          </p>
+          <a href="https://harrypotter.fandom.com/wiki/Theodore_Nott" target="_blank" rel="noopener" class="read-more">Consultar registro na Harry Potter Wiki &rarr;</a>
+        </div>
+      </article>
 
-        <section class="characters-analysis">
+      <article class="post-card">
+        <div class="post-image">
+          <img src="https://via.placeholder.com/300x400/0b1a10/00ff88?text=Blaise+Zabini" alt="Blaise Zabini">
+        </div>
+        <div class="post-content">
+          <span class="post-badge">Elite de Hogwarts</span>
+          <h2>Blaise Zabini</h2>
+          <p class="post-meta">Publicado por Comunidade Sonserina | Categoria: Canon</p>
+          <p class="post-excerpt">
+            Blaise é a definição de compostura e aristocracia. Filho de uma célebre bruxa conhecida por ter se casado sete vezes, Zabini possui um desprezo natural por qualquer um que considere inferior. Sua altivez e independência garantiram-lhe um lugar de destaque no seletíssimo Clube do Slugue, gerenciado por Horácio Slughorn.
+          </p>
+          <a href="https://harrypotter.fandom.com/wiki/Blaise_Zabini" target="_blank" rel="noopener" class="read-more">Consultar registro na Harry Potter Wiki &rarr;</a>
+        </div>
+      </article>
 
-            <article class="character-card voldemort">
-                <div class="char-desc">
-                    <h3>O Irmão Mais Velho é o Voldemort</h3>
-                    <p>Ele era obcecado pelo poder, queria a varinha mais forte do mundo e achava que venceria qualquer um, mas o seu próprio ego causou a sua ruína.</p>
-                </div>
-            </article>
-
-            <article class="character-card snape">
-                <div class="char-desc">
-                    <h3>O Irmão do Meio é o Snape</h3>
-                    <p>Ele passou a vida inteira sofrendo pela morte de Lílian Potter. Ele vivia no passado, guiado pelo fantasma de um amor perdido, exatamente como o irmão que queria a Pedra da Ressurreição.</p>
-                </div>
-            </article>
-
-            <article class="character-card harry">
-                <div class="char-desc">
-                    <h3>O Irmão Mais Novo é o Harry</h3>
-                    <p>Ele herdou a Capa da Invisibilidade, usou o objeto para se proteger e, no momento final na Floresta Proibida, ele não foge. Ele aceita o seu destino e, como diz o livro, 'cumprimenta a Morte como uma velha amiga'.</p>
-                </div>
-            </article>
-
-        </section>
-
-        <article class="vlog-entry dumbledore-revelation">
-            <h3>Mas a melhor parte da teoria vem agora:</h3>
-            <p>Se eles são os irmãos, quem é a Morte? <strong>Alvo Dumbledore</strong>. Pense bem: Dumbledore foi o único bruxo a possuir as três Relíquias ao longo da vida. Foi ele quem entregou a capa para o Harry, ele teve papel direto na morte de Snape e Voldemort e, para fechar com chave de ouro, quando o Harry 'morre' e vai para King's Cross, quem está lá esperando por ele como uma velha amiga? O próprio Dumbledore.</p>
-        </article>
-
-        <article class="vlog-conclusion">
-            <h4>E aí, o que achou?</h4>
-            <p>Essa teoria faz sentido para você ou é só loucura da cabeça dos Potterheads? Comenta aqui embaixo qual é a sua opinião e qual outra teoria você quer ver por aqui.</p>
-            <p>Se gostou do nosso blog de hoje, curta nosso post e siga nossa página! Até a próxima!</p>
-        </article>
+      <article class="post-card">
+        <div class="post-image">
+          <img src="https://via.placeholder.com/300x400/0b1a10/00ff88?text=Mattheo+Riddle" alt="Mattheo Riddle">
+        </div>
+        <div class="post-content">
+          <span class="post-badge">Fanon / Wattpad</span>
+          <h2>Mattheo Riddle</h2>
+          <p class="post-meta">Publicado por Comunidade Sonserina | Categoria: Fanfiction</p>
+          <p class="post-excerpt">
+            Criado originalmente na fanfiction <i>Possessive</i>, Mattheo é concebido pela comunidade de fãs como o filho sombrio e enigmático de Lord Voldemort. Ele se tornou uma das figuras mais emblemáticas do fenômeno "Slytherin Boys" no TikTok e Wattpad, sintetizando a estética do anti-herói rebelde e incompreendido.
+          </p>
+          <a href="https://wattpad.com" target="_blank" rel="noopener" class="read-more">Explorar histórias no Wattpad &rarr;</a>
+        </div>
+      </article>
 
     </main>
 
-    <footer class="vlog-footer">
-        <div class="interaction-area">
-            <h3>Gostou dessa teoria mágica?</h3>
-            
-            <button class="magical-like-button" id="likeButton">
-                <span class="wand-icon"></span>
-                <span class="like-text">Curtir Post</span>
-                <span class="like-count" id="likeCount">0</span>
-            </button>
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3>A Casa Sonserina</h3>
+        <p>Fundada por Salazar Slytherin, esta casa valoriza a ambição, a astúcia, a liderança e a desenvoltura.</p>
+        <div class="house-details">
+          <p><strong>Cores:</strong> Verde e Prata</p>
+          <p><strong>Elemento:</strong> Água</p>
+          <p><strong>Animal:</strong> Serpente</p>
         </div>
-        <p class="copyright">© 2023 - Vlog Potterhead. Feito com magia.</p>
-    </footer>
+      </div>
+    </aside>
+  </div>
 
+  <footer>
+    <p>&copy; Blog Slytherin Boys — Feito para fãs do Universo Bruxo.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
